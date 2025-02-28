@@ -11,8 +11,6 @@ QingLuanPackageManager [子命令] [参数] [选项]
 
 选项：
 <-h | --help>            获取帮助
-<-i | --init> [项目名称]  初始化项目
-<-e>          [sdk版本]   sdk版本（在 -i 后）
 
 子命令：
 init        初始化项目
