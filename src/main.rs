@@ -26,15 +26,15 @@ fn main() {
 	// 获得参数
 	let args = get_args();
 	// 检查开始方式
-	if let Some(root_path) = args.get("projectPath") {
-		// 查看projectPath是否存在
-		if std::fs::metadata(args.get("projectPath").unwrap()).is_ok() {
-			// 读取QingLuan.toml文件
-			script::start(root_path.to_string());
-		} else {
-			Log::new(LogType::Err, format!("路径 {} 不存在。", args.get("projectPath").unwrap()).as_str(), 21).print();
-		}
-	}
+	// if let Some(root_path) = args.get("projectPath") {
+	// 	// 查看projectPath是否存在
+	// 	if std::fs::metadata(args.get("projectPath").unwrap()).is_ok() {
+	// 		// 读取QingLuan.toml文件
+	// 		script::start(root_path.to_string());
+	// 	} else {
+	// 		Log::new(LogType::Err, format!("路径 {} 不存在。", args.get("projectPath").unwrap()).as_str(), 21).print();
+	// 	}
+	// }
 }
 
 /// ## 获取命令行参数
@@ -61,7 +61,10 @@ fn get_args() -> HashMap<String, String> {
 		println!("   uninstall      卸载包");
 		println!("   	 [包名称] -v [包版本]\n\r");
 		println!("   find           查找包");
-		println!("   	 [包名称] -v [包版本]\n\r");
+		println!("   	 [包名称] -v [包版本] *[<-include | -exclude> [包名称...] | 默认: 仅导航至版本名处]\n\r");
+		println!("   alter          修改");
+		println!("       config     修改配置文件");
+		println!("           [配置文件名称] [配置项名称] [配置项值]\n\r");
 		exit(0);
 	}
 
